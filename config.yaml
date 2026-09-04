@@ -1,0 +1,24 @@
+recommender:
+  weights:
+    alpha: 0.4          # Content-based score weight
+    beta: 0.4           # Collaborative filtering score weight
+    gamma: 0.2          # Performance alignment score weight
+  top_k: 10
+  min_interactions_for_cf: 3
+  collaborative_n_factors: 20
+
+database:
+  url: "sqlite:///./learning_recommender.db"
+
+paths:
+  raw_data_dir: "data/raw"
+  processed_data_dir: "data/processed"
+  synthetic_data_dir: "data/synthetic"
+  models_dir: "models"
+  cf_model_path: "models/cf_model.pkl"
+  content_vectorizer_path: "models/content_vectorizer.pkl"
+
+llm:
+  enabled: false
+  model: "phi4-mini"
+  endpoint: "http://localhost:11434/api/generate"
